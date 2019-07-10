@@ -37,10 +37,6 @@ void bfs(int u,int v){
 
 int main (){
 	FASTIO
-#ifdef _online_judge
-	freopen("input.txt" , "r", stdin);
-	//freopen("output.txt", "w", stdout);
-#endif
 
     int n,m;cin >> n >> m;
     int u,v;
