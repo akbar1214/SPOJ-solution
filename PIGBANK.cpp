@@ -13,8 +13,6 @@ int main() {
         int empty_weight, filled_weight;
         cin >> empty_weight >> filled_weight;
 
-        int net_weight = filled_weight - empty_weight;
-
         int number_of_coins;
         cin >> number_of_coins;
 
@@ -24,20 +22,20 @@ int main() {
             cin >> value[i] >> weight[i];
         }
 
-        vector<int> ans(filled_weight+3,con);
+        vector<int> ans(filled_weight + 3, con);
         int siz = filled_weight - empty_weight;
         ans[0] = 0;
-        for(int i=0;i<=siz;i++) {
+        for (int i = 0; i <= siz; i++) {
 
-            for(int j=0;j<number_of_coins;j++) {
+            for (int j = 0; j < number_of_coins; j++) {
 
-                if(i >= weight[j])
-                    ans[i] = min(ans[i],ans[i - weight[j]] + value[j]);
+                if (i >= weight[j])
+                    ans[i] = min(ans[i], ans[i - weight[j]] + value[j]);
             }
         }
-        if(ans[siz] == con){
+        if (ans[siz] == con) {
             cout << "This is impossible.\n";
-        }else{
+        } else {
             cout << "The minimum amount of money in the piggy-bank is " << ans[siz] << ".\n";
         }
     }
