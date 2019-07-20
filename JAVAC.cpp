@@ -2,8 +2,6 @@
 
 using namespace std;
 
-const int con = static_cast<int>(1e8 + 5);
-
 void to_cpp(string &s) {
 
     string ans;
